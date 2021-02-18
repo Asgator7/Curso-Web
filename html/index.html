@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate, Post-Check=0, Pre-Check=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercícios HTML</title>
+</head>
+<body>
+    <header>
+        Exercícios HTML
+    </header>
+    <nav>
+        <a href caminho="exercicios/teste.html">00 - Teste</a>
+        <br>
+        <a href caminho="exercicios/texto1.html">01 - Texto1</a>
+        <br>
+        <a href caminho="exercicios/texto2.html">02 - Texto2</a>
+        <br>
+        <a href caminho="exercicios/listas.html">03 - Listas</a>
+        <br>
+        <a href caminho="exercicios/listaAninhada.html">04 - Lista Aninhada</a>
+        <br>
+        <a href caminho="exercicios/links.html">05 - Links</a>
+        <br>
+        <a href caminho="exercicios/tabela.html">06 - Tabela</a>
+        <br>
+        <a href caminho="exercicios/form/form.html">07 - Formulário</a>
+        <br>
+        <a href caminho="exercicios/imagens.html">08 - Imagens</a>
+        <br>
+        <a href caminho="exercicios/video.html">09 - Vídeos</a>
+        <br>
+    </nav>
+    <section id="conteudo"></section>
+    
+    <footer>
+        <br>
+        Curso de Web Moderna
+    </footer>
+
+    <script>
+        document.querySelectorAll('[caminho]').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+            link.onclick = function(e){
+                e.preventDefault()
+                
+               
+                fetch(link.getAttribute('caminho'))
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+            } 
+        })
+    </script>
+
+
+ 
+
+</body>
+</html>

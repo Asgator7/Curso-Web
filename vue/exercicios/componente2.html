@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Componente</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+    <div id="app">
+        <contador valor="0"></contador>
+    </div>
+
+    <script>
+        Vue.component('contador', {
+            props: ['valor'],
+            template: `
+                <div>
+                    <p>O número atual está em {{ valor }}</p>
+                    <button @click="valor++">Adicionar mais 1</button>
+                </div>
+            `
+        })
+        new Vue({
+            el: "#app"
+        })
+    </script>
+</body>
+</html>
